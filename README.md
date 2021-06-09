@@ -2,23 +2,52 @@
 
 ## Project setup
 ```
-yarn install
+npm install --save vue-defined-select或者yarn add  vue-defined-select
 ```
 
-### Compiles and hot-reloads for development
+
+
+### 全局引入
 ```
-yarn serve
+import  Select  from 'vue-defined-select'
+import "vue-defined-select/lib/definedSelect.css";
+Vue.use(Select)
 ```
 
-### Compiles and minifies for production
+
+### 局部引入
 ```
-yarn build
+import  Select  from 'vue-defined-select'
+import "vue-defined-select/lib/definedSelect.css";
+components:{
+   Select
+}
 ```
 
-### Lints and fixes files
+
+
+### 模板引入
 ```
-yarn lint
+<Select v-model="selected" :options="options" :multiple="true" />
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+
+
+
+### 调用
+```
+export default {
+  name: 'App',
+  data:()=>({
+    selected:[],
+    options:[
+      {label:'苹果',value:1},
+      {label:'橘子',value:2},
+      {label:'栗子',value:3},
+      {label:'香蕉',value:4},
+      {label:'火龙果',value:5},
+    ]
+  })
+}
+```
+
